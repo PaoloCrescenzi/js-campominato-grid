@@ -25,6 +25,10 @@ function generateGrid(numCelle) {
         newCell.innerHTML = i;
     
         grigliaCont.append(newCell);
+
+        newCell.addEventListener ("click", function() {
+            newCell.classList.toggle("bg-danger");
+        } )
     }
 }
 
