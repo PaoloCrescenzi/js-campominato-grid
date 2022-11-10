@@ -3,27 +3,28 @@ const grigliaCont = document.querySelector(".griglia-cont");
 
 btnGenerateGrid.addEventListener("click", function () {
     console.log(this);
-
-
-    GenerateGrid(10);
-});
+    grigliaCont.innerHTML = "";
+    generateGrid(10);
+} );
 
 /**
  * @param {number} numCelle
  */
 
-function GenerateGrid() {
-    const totalCell = math.pow(numCelle, 2);
-    gridContainer.innerHTML = "";
+function generateGrid(numCelle) {
+    const totalCell = numCelle * numCelle;
+    
 
-    for (let i = 0; i < totalCell; i++) {
+    for (let i = 1; i <= totalCell; i++) {
         const newCell = document.createElement("div");
 
         newCell.classList.add("grid-cell");
         newCell.style.flexBasis = `calc(100% / ${ numCelle })`;
         newCell.style.width = `calc(100% / ${ numCelle })`;
 
-        grigliaCont.append(newCell)
+        newCell.innerHTML = i;
+    
+        grigliaCont.append(newCell);
     }
 }
 
